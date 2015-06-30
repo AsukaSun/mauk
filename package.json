@@ -1,0 +1,31 @@
+{
+  "name": "mauk",
+  "version": "0.0.1",
+  "description": "this web frame",
+  "main": "mauk/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://28509993@github.com/28509993/mauk.git"
+  },
+  "author": "wangmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/28509993/mauk/issues"
+  },
+  "homepage": "https://github.com/28509993/mauk#readme",
+  "dependencies": {
+    "ejs": "2.3.1",
+    "express": "4.12.3",
+    "formidable": "^1.0.17",
+    "log4js": "^0.6.26",
+    "serve-favicon": "^2.3.0",
+    "serve-static": "^1.9.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2"
+  }
+}
