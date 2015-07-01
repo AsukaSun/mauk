@@ -59,6 +59,8 @@ exports = module.exports = tuple('log!access','_',function (log,_){
 
 first character  !  file ,it is web file ,and deployed by gulp
 
+
+```
 http://localhost:3001/demo/simple?d=3
 http://localhost:3001/demo/notuple?d=3
 http://localhost:3001/demo/noname?d=3
@@ -68,4 +70,7 @@ http://localhost:3001/demo/article
 http://localhost:3001/demo/say
 http://localhost:3001/demo/doFail
 http://localhost:3001/main
+
+```
+
 

@@ -1,6 +1,6 @@
 {
   "name": "mauk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this web frame",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "tree",
     "mauk"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/28509993/mauk/issues"
   },
