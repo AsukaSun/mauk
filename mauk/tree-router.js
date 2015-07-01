@@ -128,8 +128,8 @@ exports = module.exports = tuple('log!tauk','viewEngine',function(log,viewEngine
             if (req.method !== 'POST') return fn();
             var form = new formidable.IncomingForm();
             form.parse(req, function (err, fields) {
-                fn(err);
                 util._extend(req.query, fields);
+                fn(err);
             })
         }
 

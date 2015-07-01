@@ -9,5 +9,5 @@ function full(filename){
 var coreExtend=require('./core-extend');
 exports.treeRouter=  include(full('./tree-router'));
 exports.logger=require('./logger');
-
+exports.deploy= require( "./gulp-depoly")
 //include(full('./~lib/passes'))(app);
