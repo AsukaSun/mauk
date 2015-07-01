@@ -13,6 +13,14 @@ exports.use = function () {
     return log4js.connectLogger(log4js.getLogger('access'),{level:'trace',format:':method :url :status'});
 }
 
+/*
+Object.defineProperty(exports, "use", {
+    get: function () {
+        return log4js.connectLogger(log4js.getLogger('access'),{level:'trace',format:':method :url :status'});
+    }
+});*/
+
+
 exports.initialize = function (options) {
     options&& log4js.configure({appenders: options, replaceConsole: false});
 }

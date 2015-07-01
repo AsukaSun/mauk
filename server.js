@@ -1,7 +1,7 @@
 var options = require('./setting.json')
     //, exec = require('child_process').exec
 
-var app = require('./app/app.js')(options);
+var app = require('./demo/app.js')(options);
 var log=app.getLog();
 
 app.use(function(req, res, next) {
