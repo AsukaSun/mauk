@@ -32,7 +32,6 @@ IncomingMessage.prototype.waitPost = function(fn) {
         util._extend(req.query, fields);
         fn(err);
     })
-    fn &&fn();
 }
 
 
