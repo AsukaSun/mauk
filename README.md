@@ -67,7 +67,7 @@ first character  !  file ,it is web file ,and deployed by gulp
    $开头文件提供给后端使用，动态加载到路由树中
    此框架特别适合中小型应用的快速开发和部署,逻辑清晰，代码简单
 # 加入
-群 231138315
+欢迎大家加入  nodejs & mauk技术交流群，一起共同成长！QQ群号： 231138315  (^_-)-☆
 
 
 ```
