@@ -2,7 +2,6 @@ var options = require('./setting.json')
     //, exec = require('child_process').exec
 
 var app = require('./demo/app.js')(options);
-var log=app.getLog();
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -30,13 +29,6 @@ var server = app.listen(PORT, function () {
     console.log('Node app is running, port:', PORT);
 });
 
-//log example
-console.log('log example')
-log.error('log.error(str)');
-log.info('log.info(str)');
-log.warn('log.warn(str)');
 
-//exec('gulp', ['all']);
-//test
 
 
