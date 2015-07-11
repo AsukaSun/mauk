@@ -38,13 +38,13 @@ IncomingMessage.prototype.waitPost = function(fn) {
 
 
 exports=module.exports=function(options) {
-    var app= express();
+    var app= express({strict: true});
     mauk.requireConfig.call(app,extend);
     var tree=  mauk.treeRouter(app)();
     tree.load(__dirname);
     app.use(servestatic('public', {redirect: false}))
         .use(favicon('./demo/favicon.ico'))
-        .use(tree.use())
+        .use(tree.route())
     return app;
 }
 
