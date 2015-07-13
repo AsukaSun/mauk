@@ -18,7 +18,7 @@ exports = module.exports = tuple('log!access','_',function (log,_){
             log.error('log.error(str)');
             log.info('log.info(str)');
             log.warn('log.warn(str)');
-            res.success({haha:'simple'})
+            res.success2({haha:'simple'})
         }),
         tuple('noname',function(req,res,next){
             res.json({a:'noname'})

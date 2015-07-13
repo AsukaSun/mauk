@@ -1,6 +1,6 @@
 {
   "name": "mauk",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "this web frame",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/28509993/mauk#readme",
   "dependencies": {
-    "express": "~4.12.3"
   },
   "devDependencies": {
     "ejs": "~2.3.1",
