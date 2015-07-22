@@ -9,15 +9,16 @@ function full(filename){
 }
 
 exports = module.exports = tuple('log!access','_',function (log,_){
-    var app = this;
     return [
         function notuple(req, res) {
             res.success({haha:'notuple'})
         },
         tuple(function simple(req,res){
+            //this is {app:app,req:req,res:res,log:log,_:_......}
             log.error('log.error(str)');
             log.info('log.info(str)');
             log.warn('log.warn(str)');
+            this.log.warn ('hahahahaha');
             res.success2({haha:'simple'})
         }),
         tuple('noname',function(req,res,next){
@@ -41,7 +42,6 @@ exports = module.exports = tuple('log!access','_',function (log,_){
         tuple({rule:'doFail',method:'GET',noAuth:true},function(req,res,next){
             res.fail({haha:'err'})
         })
-
-
     ];
 });
+

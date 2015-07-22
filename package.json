@@ -23,13 +23,14 @@
   },
   "homepage": "https://github.com/28509993/mauk#readme",
   "dependencies": {
+    "express": "^4.13.1"
   },
   "devDependencies": {
     "ejs": "~2.3.1",
     "formidable": "^1.0.17",
     "log4js": "^0.6.26",
     "serve-favicon": "^2.3.0",
-    "serve-static": "^1.9.3",
+    "serve-static": "^1.10.0",
     "underscore": "^1.8.3",
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2"
