@@ -8,6 +8,42 @@ function full(filename){
     return path.resolve(__dirname,filename);
 }
 
+var thunkify =require('thunkify');
+var fs=require('fs');
+var co=require('co');
+var mySetTimeout_=function(times,cb){
+    setTimeout(function(){console.log('timeouit!');cb(null,times+'kkk')},times);
+}
+mySetTimeout_(1000,function(err,k){console.log(k)});
+var mySetTimeout = thunkify(mySetTimeout_);
+function *Foo(){
+    setTimeout(function(){console.log('timeouit!');cb(null,times+'kkk')},times);
+}
+
+co(function * () {
+    var v1 = yield mySetTimeout(2000);
+    console.log(v1);
+    v1 = yield mySetTimeout(1000);
+    console.log(v1);
+    var vi = yield Foo ();
+    console.log(vi)
+    return 'complete';
+}).then(function (val) {
+    console.log(val);
+}, function (err) {
+    console.error(err.stack);
+});
+
+//https://cnodejs.org/topic/4f16442ccae1f4aa2700106d
+
+var readFile =thunkify(fs.readFile);
+co(function *(){
+    var data= yield readFile(__filename);
+    console.log(data);
+} )
+
+
+
 exports = module.exports = tuple('log!access','_',function (log,_){
     var app = this;
     return [
@@ -18,7 +54,22 @@ exports = module.exports = tuple('log!access','_',function (log,_){
             log.error('log.error(str)');
             log.info('log.info(str)');
             log.warn('log.warn(str)');
-            res.success2({haha:'simple'})
+            var mySetTimeout = thunkify(mySetTimeout_);
+            co(function * () {
+                var v1 = yield mySetTimeout(2000);
+                console.log(v1);
+                v1 = yield mySetTimeout(1000);
+                console.log(v1);
+                vi=yield {};
+                console.log(vi)
+                res.success({haha:'simple'})
+                return 'complete';
+            }).then(function (val) {
+                console.log(val);
+            }, function (err) {
+                console.error(err.stack);
+            });
+
         }),
         tuple('noname',function(req,res,next){
             res.json({a:'noname'})

@@ -30,5 +30,27 @@ var server = app.listen(PORT, function () {
 });
 
 
+var mySetTimeout_=function(times,cb){
+    setTimeout(function(){console.log('timeouit!');cb(null,times+'kkk')},times);
+}
 
+/*
+var thunkify =require('thunkify');
+mySetTimeout_(1000,function(err,k){console.log(k)});
+var co=require('co');
+var mySetTimeout = thunkify(mySetTimeout_);
+var k=co(function * () {
+    var v1 = yield mySetTimeout(2000);
+    console.log(v1);
+    v1 = yield mySetTimeout(1000);
+    console.log(v1);
 
+});
+var fs=require('fs');
+var readFile =thunkify(fs.readFile);
+co(function *(){
+    var data= yield readFile(__filename);
+    console.log(data);
+} )
+
+*/
