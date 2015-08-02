@@ -44,9 +44,10 @@ exports=module.exports=function(options) {
     tree.load(__dirname);
     app.use(servestatic('public', {redirect: false}))
         .use(favicon('./demo/favicon.ico'))
-        .use(tree.route())
+        .use(tree.route());
     return app;
 }
+
 
 
 

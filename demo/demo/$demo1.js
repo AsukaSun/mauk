@@ -8,6 +8,7 @@ function full(filename){
     return path.resolve(__dirname,filename);
 }
 
+/*
 var thunkify =require('thunkify');
 var fs=require('fs');
 var co=require('co');
@@ -16,8 +17,8 @@ var mySetTimeout_=function(times,cb){
 }
 mySetTimeout_(1000,function(err,k){console.log(k)});
 var mySetTimeout = thunkify(mySetTimeout_);
-function *Foo(){
-    setTimeout(function(){console.log('timeouit!');cb(null,times+'kkk')},times);
+function *Foo(times,cb){
+    //setTimeout(function(){console.log('timeouit!');cb(null,times+'kkk')},times);
 }
 
 co(function * () {
@@ -39,18 +40,18 @@ co(function * () {
 var readFile =thunkify(fs.readFile);
 co(function *(){
     var data= yield readFile(__filename);
-    console.log(data);
-} )
+    //console.log(data);
+} )*/
 
 
 
 exports = module.exports = tuple('log!access','_',function (log,_){
-    var app = this;
     return [
         function notuple(req, res) {
             res.success({haha:'notuple'})
         },
         tuple(function simple(req,res){
+            //this is {app:app,req:req,res:res,log:log,_:_......}
             log.error('log.error(str)');
             log.info('log.info(str)');
             log.warn('log.warn(str)');
@@ -69,7 +70,6 @@ exports = module.exports = tuple('log!access','_',function (log,_){
             }, function (err) {
                 console.error(err.stack);
             });
-
         }),
         tuple('noname',function(req,res,next){
             res.json({a:'noname'})
@@ -92,7 +92,6 @@ exports = module.exports = tuple('log!access','_',function (log,_){
         tuple({rule:'doFail',method:'GET',noAuth:true},function(req,res,next){
             res.fail({haha:'err'})
         })
-
-
     ];
 });
+
