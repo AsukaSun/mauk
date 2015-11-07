@@ -1,0 +1,105 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/wangmin/work/node/mauk',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/wangmin/.npm/mauk/0.0.9/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/wangmin/.npm/mauk/0.0.9/package.tgz',
+9 verbose tar pack   '/Users/wangmin/work/node/mauk' ]
+10 verbose tarball /Users/wangmin/.npm/mauk/0.0.9/package.tgz
+11 verbose folder /Users/wangmin/work/node/mauk
+12 info prepublish mauk@0.0.9
+13 verbose addLocalTarball adding from inside cache /Users/wangmin/.npm/mauk/0.0.9/package.tgz
+14 silly cache afterAdd mauk@0.0.9
+15 verbose afterAdd /Users/wangmin/.npm/mauk/0.0.9/package/package.json not in flight; writing
+16 verbose afterAdd /Users/wangmin/.npm/mauk/0.0.9/package/package.json written
+17 silly publish { name: 'mauk',
+17 silly publish   version: '0.0.9',
+17 silly publish   description: 'this web frame',
+17 silly publish   main: 'index.js',
+17 silly publish   scripts:
+17 silly publish    { test: 'echo "Error: no test specified" && exit 1',
+17 silly publish      start: 'node server.js' },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://28509993@github.com/28509993/mauk.git' },
+17 silly publish   author: { name: 'wangmin' },
+17 silly publish   keywords: [ 'express', 'router', 'tree', 'mauk' ],
+17 silly publish   license: 'MIT',
+17 silly publish   bugs: { url: 'https://github.com/28509993/mauk/issues' },
+17 silly publish   homepage: 'https://github.com/28509993/mauk#readme',
+17 silly publish   dependencies: {},
+17 silly publish   devDependencies:
+17 silly publish    { ejs: '~2.3.1',
+17 silly publish      formidable: '^1.0.17',
+17 silly publish      log4js: '^0.6.26',
+17 silly publish      'serve-favicon': '^2.3.0',
+17 silly publish      'serve-static': '^1.10.0',
+17 silly publish      underscore: '^1.8.3',
+17 silly publish      gulp: '^3.9.0',
+17 silly publish      'gulp-rename': '^1.2.2',
+17 silly publish      express: '^4.13.1' },
+17 silly publish   readme: '# mauk\nthis is a web frame base on express\n# clone\nnpm install mauk\n# demo\n\n```javascript\n\nvar extend= {\n    viewEngine: require(\'ejs\'),\n    _: require(\'underscore\'),\n    Promise: require(\'q\'),\n    log: logger\n}\n    mauk.requireConfig.call(app,extend);\n    var tree=  mauk.treeRouter(app)();\n    tree.load(__dirname);\n    app.use(tree.use())\n\n```\n\n```javascript\nexports = module.exports = tuple(\'log!access\',\'_\',function (log,_){\n    var app = this;\n    return [\n        function notuple(req, res) {\n            res.success({haha:\'notuple\'})\n        },\n        tuple(function simple(req,res){\n            res.success({haha:\'simple\'})\n        }),\n        tuple(\'noname\',function(req,res,next){\n            res.json({a:\'noname\'})\n        }),\n        tuple(/rule/i,function(req,res,next){\n            res.success({haha:\'rule\'})\n        }),\n\n        tuple({noAuth:true},function hello(req,res,next){\n            res.success({haha:\'hello\'})\n        }),\n\n        tuple({rule:\'article\',method:\'GET\',view:full(\'demo1.ejs\'),noAuth:true},function(req,res,next){\n            res.render2({currentTime:678});\n            //res.json({a:2})\n        }),\n        tuple({rule:/say/i,method:\'GET\',noAuth:true},function(req,res,next){\n            res.success({haha:\'ok\'})\n        }),\n        tuple({rule:\'doFail\',method:\'GET\',noAuth:true},function(req,res,next){\n            res.fail({haha:\'err\'})\n        })\n\n\n    ];\n});\n\n\n\n```\n\nfirst character  !  file ,it is web file ,and deployed by gulp\n#介绍\n   这个是基于EXPRESS的，根据文件夹进行路由的WEB框架，解决了原来项目中路由与文件分布使用困难的问题，使用动态路由以后代码的耦合性大大降低；\n   前端代码JS于后端代码JS根据逻辑需要分布在同一文件夹，根据逻辑要求拉近了前后端代码的空间；\n   !开头的文件提供给前端WEB使用，通过GULP或者其他工具自动发布到对应的PUBLIC文件夹中；\n   $开头文件提供给后端使用，动态加载到路由树中\n   此框架特别适合中小型应用的快速开发和部署,逻辑清晰，代码简单\n# 加入\n欢迎大家加入  nodejs & mauk技术交流群，一起共同成长！QQ群号： 231138315  (^_-)-☆\n\n\n```\n\nhttp://localhost:3001/demo/simple?d=3\nhttp://localhost:3001/demo/notuple?d=3\nhttp://localhost:3001/demo/noname?d=3\nhttp://localhost:3001/demo/hello\nhttp://localhost:3001/demo/rule\nhttp://localhost:3001/demo/article\nhttp://localhost:3001/demo/say\nhttp://localhost:3001/demo/doFail\nhttp://localhost:3001/main\n\n```\n\n\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: 'e462bb53ccb2c3a9098f92d6f6310e24fc8cd3fa',
+17 silly publish   _id: 'mauk@0.0.9',
+17 silly publish   _shasum: '5d8f74271304de6070e51c34a16392e99410f1a1',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name mauk
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/mauk
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/wangmin/.npm/mauk/0.0.9/package.tgz
+25 verbose request uri https://registry.npmjs.org/mauk
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 20:19:35
+28 verbose request using bearer token for auth
+29 verbose request id e750b6153dcf908e
+30 http request PUT https://registry.npmjs.org/mauk
+31 http 403 https://registry.npmjs.org/mauk
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=60',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Sat, 07 Nov 2015 12:19:42 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-hkg6821-HKG',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1446898780.169044,VS0,VE2796' }
+33 verbose request invalidating /Users/wangmin/.npm/registry.npmjs.org/mauk on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.0.9." : mauk
+35 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
+35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:354:22)
+35 verbose stack     at Request.emit (events.js:110:17)
+35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1207:14)
+35 verbose stack     at Request.emit (events.js:129:20)
+35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1153:12)
+35 verbose stack     at IncomingMessage.emit (events.js:129:20)
+35 verbose stack     at _stream_readable.js:908:16
+35 verbose stack     at process._tickCallback (node.js:355:11)
+36 verbose statusCode 403
+37 verbose pkgid mauk
+38 verbose cwd /Users/wangmin/work/node/mauk
+39 error Darwin 14.3.0
+40 error argv "node" "/usr/local/bin/npm" "publish"
+41 error node v0.12.7
+42 error npm  v2.11.3
+43 error code E403
+44 error "You cannot publish over the previously published version 0.0.9." : mauk
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
