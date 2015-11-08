@@ -1,6 +1,6 @@
 {
   "name": "mauk",
-  "version": "0.0.12",
+  "version": "0.0.10",
   "description": "this web frame",
   "main": "index.js",
   "scripts": {
