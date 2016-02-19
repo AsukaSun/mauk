@@ -39,7 +39,9 @@ IncomingMessage.prototype.waitPost = function(fn) {
 
 exports=module.exports=function(options) {
     var app= express({strict: true});
-    mauk.requireConfig.call(app,extend);
+    //mauk.requireConfig.call(app,extend); 废弃
+    //add 增加 import的库或者函数
+    app.extend = extend;
     var tree=  mauk.treeRouter(app)();
     tree.load(__dirname);
     app.use(servestatic('public', {redirect: false}))
